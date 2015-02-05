@@ -29,7 +29,8 @@ case "$1" in
     then
       _client "reload"
     else
-      java -jar ${MINECRAFT_DIR}/minecraft_server.jar nogui
+      /usr/bin/env java -Xmx${MINECRAFT_MAXHEAP} -Xms${MINECRAFT_MINHEAP} \
+        -jar ${MINECRAFT_DIR}/minecraft_server.jar ${MINECRAFT_OPTS}
     fi
     ;;
 
