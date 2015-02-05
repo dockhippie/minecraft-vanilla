@@ -4,6 +4,14 @@ These are docker images for Minecraft running on an
 [openSUSE 13.2 container](https://registry.hub.docker.com/_/opensuse/)
 
 
+## Usage
+
+```
+docker run -v /minecraft/config -v /minecraft/world -v /minecraft/logs --name minecraft-data busybox true
+docker run -p 25565:25565 -d --volumes-from minecraft-data --name minecraft webhippie/minecraft:latest start
+```
+
+
 ## Versions
 
 * [latest](https://github.com/dockhippie/minecraft/tree/master)
