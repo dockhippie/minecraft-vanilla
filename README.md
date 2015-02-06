@@ -8,24 +8,24 @@ These are docker images for Minecraft running on an
 
 ```
 docker run -v /minecraft/config -v /minecraft/world -v /minecraft/logs --name minecraft-data busybox true
-docker run -p 25565:25565 -d --volumes-from minecraft-data --name minecraft webhippie/minecraft:latest start
+docker run -p 25565:25565 -d --volumes-from minecraft-data --name minecraft webhippie/minecraft-vanilla:latest start
 ```
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/minecraft/tree/master)
-  available as ```webhippie/minecraft:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft/)
-* [1.8.1](https://github.com/dockhippie/minecraft/tree/1.8.1)
-  available as ```webhippie/minecraft:1.8.1``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft/)
-* [1.8](https://github.com/dockhippie/minecraft/tree/1.8)
-  available as ```webhippie/minecraft:1.8``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft/)
-* [1.7.10](https://github.com/dockhippie/minecraft/tree/1.7.10)
-  available as ```webhippie/minecraft:1.7.10``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft/)
+* [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master)
+  available as ```webhippie/minecraft-vanilla:latest``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.1)
+  available as ```webhippie/minecraft-vanilla:1.8.1``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8](https://github.com/dockhippie/minecraft-vanilla/tree/1.8)
+  available as ```webhippie/minecraft-vanilla:1.8``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.7.10](https://github.com/dockhippie/minecraft-vanilla/tree/1.7.10)
+  available as ```webhippie/minecraft-vanilla:1.7.10``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 
 
 ## Contributing
