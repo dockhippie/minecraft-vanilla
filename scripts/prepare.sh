@@ -2,7 +2,6 @@
 
 exec 2>&1
 set -e
-set -x
 
 function pruned_find() {
   find / -type d \( -name dev -o -name proc \) -prune -o $@ -print
@@ -35,7 +34,8 @@ zypper -n install -l --force-resolution \
   ca-certificates-mozilla \
   ca-certificates \
   wget \
-  java-1_8_0-openjdk-headless
+  java-1_8_0-openjdk-headless \
+  vim
 
 zypper clean --all
 
@@ -48,7 +48,6 @@ rm -rf /var/cache/man
 pruned_find -perm /u+s | xargs -r chmod u-s
 pruned_find -perm /g+s | xargs -r chmod g-s
 
-set +x
 echo -e "\nRemaining suspicious security bits/flaws:"
 (
   pruned_find ! -user root

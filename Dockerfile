@@ -14,20 +14,27 @@ ENV LANG en_US.utf8
 ENV LANGUAGE en_US.utf8
 ENV LC_ALL en_US.utf8
 
+RUN mkdir -p ${MINECRAFT_DIR}
+
 ADD bin /usr/bin
 ADD scripts /tmp
 
 RUN LC_ALL=C /tmp/prepare.sh
 
-RUN mkdir -p ${MINECRAFT_DIR}/config
 RUN mkdir -p ${MINECRAFT_DIR}/world
 RUN mkdir -p ${MINECRAFT_DIR}/logs
+RUN mkdir -p ${MINECRAFT_DIR}/merge
+
 RUN mkdir -p ${MINECRAFT_DIR}/template
 ADD template ${MINECRAFT_DIR}/template
 
-RUN wget -q -O ${MINECRAFT_DIR}/minecraft_server.jar ${MINECRAFT_URL}
+RUN mkdir -p ${MINECRAFT_DIR}/libexec
+ADD libexec ${MINECRAFT_DIR}/libexec
+RUN ln -sf ${MINECRAFT_DIR}/libexec/manage /usr/bin/manage
 
-VOLUME ["/minecraft/config", "/minecraft/world", "/minecraft/logs"]
+RUN wget -q -O ${MINECRAFT_DIR}/minecraft_server.${MINECRAFT_VERSION}.jar ${MINECRAFT_URL}
+
+VOLUME ["/minecraft/merge", "/minecraft/world", "/minecraft/logs"]
 
 EXPOSE 25565 25575
 
