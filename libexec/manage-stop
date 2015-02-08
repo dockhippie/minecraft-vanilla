@@ -5,7 +5,7 @@
 set -e
 [[ -z $_MANAGE_ROOT ]] && exit 1
 
-if pgrep -f minecraft_server.${MINECRAFT_VERSION}.jar
+if pgrep -f ${MINECRAFT_JAR}
 then
   manage-mcrcon "stop"
 else

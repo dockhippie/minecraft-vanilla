@@ -5,9 +5,9 @@
 set -e
 [[ -z $_MANAGE_ROOT ]] && exit 1
 
-if pgrep -f minecraft_server.${MINECRAFT_VERSION}.jar
+if pgrep -f ${MINECRAFT_JAR}
 then
   echo "Server is already running"
 else
-  manage-root && /usr/bin/env java -Xmx${MINECRAFT_MAXHEAP} -Xms${MINECRAFT_MINHEAP} -jar ${_MANAGE_ROOT}/minecraft_server.${MINECRAFT_VERSION}.jar ${MINECRAFT_OPTS}
+  manage-prepare && /usr/bin/env java -Xmx${MINECRAFT_MAXHEAP} -Xms${MINECRAFT_MINHEAP} -jar ${_MANAGE_ROOT}/${MINECRAFT_JAR} ${MINECRAFT_OPTS}
 fi
