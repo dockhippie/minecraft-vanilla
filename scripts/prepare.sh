@@ -34,7 +34,7 @@ zypper -n install -l --force-resolution \
   ca-certificates-mozilla \
   ca-certificates \
   wget \
-  java-1_8_0-openjdk-headless \
+  java-1_7_0-openjdk-headless \
   vim
 
 zypper clean --all
