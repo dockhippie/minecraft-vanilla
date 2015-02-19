@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Usage: manage running
+# Summary: Check if the server is running
+# Help: This command is used to check if the server process is running and bails out with an matching exit code.
+set -e
+[[ -z $_MANAGE_ROOT ]] && exit 1
+
+if [ "$(manage-pid)" == "" ]
+then
+  exit 1
+else
+  exit 0
+fi

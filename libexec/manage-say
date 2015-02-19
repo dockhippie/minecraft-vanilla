@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage: manage say <message>
 # Summary: Say something on the server
-# Help: This command is used to send a chat message to the server.
+# Help: This command is used to send a chat message to the server chat system.
 set -e
 [[ -z $_MANAGE_ROOT ]] && exit 1
 

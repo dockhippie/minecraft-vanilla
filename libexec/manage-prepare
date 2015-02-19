@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage: manage prepare
 # Summary: Prepare environment
-# Help: This command is used to prepare the environment including configs of the minecraft server.
+# Help: This command is used to prepare the environment including configs of the server.
 set -e
 [[ -z $_MANAGE_ROOT ]] && exit 1
 
