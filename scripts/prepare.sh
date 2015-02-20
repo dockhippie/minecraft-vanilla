@@ -34,6 +34,7 @@ zypper -n install -l --force-resolution \
   ca-certificates-mozilla \
   ca-certificates \
   wget \
+  mozilla-nss \
   java-1_7_0-openjdk-headless \
   vim
 
