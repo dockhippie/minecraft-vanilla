@@ -9,14 +9,14 @@ for TEMPLATE in $(find ${_MANAGE_ROOT}/template -mindepth 1 -type d)
 do
   RELATIVENAME=${TEMPLATE//${_MANAGE_ROOT}\/template\//}
 
-  if [ ! -d ${_MANAGE_ROOT}/merge/${RELATIVENAME} ]
+  if [ ! -d "${_MANAGE_ROOT}/merge/${RELATIVENAME}" ]
   then
-    mkdir ${_MANAGE_ROOT}/merge/${RELATIVENAME}
+    mkdir "${_MANAGE_ROOT}/merge/${RELATIVENAME}"
   fi
 
-  if [ ! -d ${_MANAGE_ROOT}/${RELATIVENAME} ]
+  if [ ! -d "${_MANAGE_ROOT}/${RELATIVENAME}" ]
   then
-    mkdir ${_MANAGE_ROOT}/${RELATIVENAME}
+    mkdir "${_MANAGE_ROOT}/${RELATIVENAME}"
   fi
 done
 
@@ -24,10 +24,10 @@ for TEMPLATE in $(find ${_MANAGE_ROOT}/template -mindepth 1 -type f)
 do
   RELATIVENAME=${TEMPLATE//${_MANAGE_ROOT}\/template\//}
 
-  if [ ! -e ${_MANAGE_ROOT}/merge/${RELATIVENAME} ]
+  if [ ! -e "${_MANAGE_ROOT}/merge/${RELATIVENAME}" ]
   then
-    cp ${TEMPLATE} ${_MANAGE_ROOT}/merge/${RELATIVENAME}
+    cp "${TEMPLATE}" "${_MANAGE_ROOT}/merge/${RELATIVENAME}"
   fi
 
-  ln -sf ${_MANAGE_ROOT}/merge/${RELATIVENAME} ${_MANAGE_ROOT}/${RELATIVENAME}
+  ln -sf "${_MANAGE_ROOT}/merge/${RELATIVENAME}" "${_MANAGE_ROOT}/${RELATIVENAME}"
 done
