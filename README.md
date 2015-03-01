@@ -1,7 +1,7 @@
 # Minecraft
 
 These are docker images for Minecraft vanilla running on an
-[openSUSE 13.2 container](https://registry.hub.docker.com/_/opensuse/)
+[Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/)
 
 
 ## Usage

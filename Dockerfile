@@ -1,4 +1,4 @@
-FROM opensuse:harlequin
+FROM webhippie/alpine:latest
 MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 ENV MINECRAFT_VERSION 1.8.1
@@ -12,17 +12,16 @@ ENV SERVER_OPTS nogui
 ENV SERVER_MOTD Minecraft
 ENV SERVER_RCONPWD webhippie
 
-ENV LANG en_US.utf8
-ENV LANGUAGE en_US.utf8
-ENV LC_ALL en_US.utf8
-
-RUN mkdir -p /minecraft
+RUN apk-install \
+  curl \
+  vim \
+  ca-certificates \
+  nss \
+  openjdk7
 
 ADD bin /usr/bin
-ADD scripts /tmp
 
-RUN LC_ALL=C /tmp/prepare.sh
-
+RUN mkdir -p /minecraft
 RUN mkdir -p /minecraft/world
 RUN mkdir -p /minecraft/logs
 RUN mkdir -p /minecraft/merge
@@ -34,7 +33,7 @@ RUN mkdir -p /minecraft/libexec
 ADD libexec /minecraft/libexec
 RUN ln -sf /minecraft/libexec/manage /usr/bin/manage
 
-RUN wget -q -O /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
+RUN curl -o /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 
 VOLUME ["/minecraft/merge", "/minecraft/world", "/minecraft/logs"]
 
