@@ -19,6 +19,7 @@ RUN apk-install \
   nss \
   openjdk7
 
+ADD misc/cacerts /usr/lib/jvm/java-1.7-openjdk/jre/lib/security/cacerts
 ADD bin /usr/bin
 
 RUN mkdir -p /minecraft
@@ -33,7 +34,7 @@ RUN mkdir -p /minecraft/libexec
 ADD libexec /minecraft/libexec
 RUN ln -sf /minecraft/libexec/manage /usr/bin/manage
 
-RUN curl -o /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
+RUN curl -o /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL} 2> /dev/null
 
 VOLUME ["/minecraft/merge", "/minecraft/world", "/minecraft/logs"]
 
