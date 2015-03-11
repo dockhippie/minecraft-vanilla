@@ -7,5 +7,5 @@ set -e
 
 sed -i \
   -e "s/motd=.*/motd=${SERVER_MOTD}/" \
-  -e "s/motd=.*/motd=${SERVER_RCONPWD}/" \
+  -e "s/rcon\.password=.*/motd=${SERVER_RCONPWD}/" \
   /minecraft/server.properties
