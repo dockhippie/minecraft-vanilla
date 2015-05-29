@@ -13,4 +13,4 @@ then
   exit 1
 fi
 
-manage-mcrcon "weather clear ${DURATION}"
+mcrcon -H 127.0.0.1 -p ${SERVER_RCONPWD} "weather clear ${DURATION}"

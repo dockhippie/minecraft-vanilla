@@ -21,6 +21,21 @@ docker exec -ti minecraft manage help
 * [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master)
   available as ```webhippie/minecraft-vanilla:latest``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.6](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.6)
+  available as ```webhippie/minecraft-vanilla:1.8.6``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.5](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.5)
+  available as ```webhippie/minecraft-vanilla:1.8.5``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.4](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.4)
+  available as ```webhippie/minecraft-vanilla:1.8.4``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.3](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.3)
+  available as ```webhippie/minecraft-vanilla:1.8.3``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.2)
+  available as ```webhippie/minecraft-vanilla:1.8.2``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 * [1.8.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.1)
   available as ```webhippie/minecraft-vanilla:1.8.1``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
@@ -50,28 +65,19 @@ ENV SERVER_RCONPWD webhippie
 Usage: manage <command> [<args>]
 
 Some useful manage commands are:
-   bash              Start a shell on container
    commands          List all available sub commands
-   config            Update server config
    console           Start interactive console
    deop              Deop a specific player
-   mcrcon            Execute a remote command
    op                Op a specific player
-   pid               Return the process id of the server
-   prepare           Prepare environment
-   reload            Reload the server
-   running           Check if the server is running
    save-all          Save the current world state
    save-off          Disable the autosave feature
    save-on           Enable the autosave feature
    say               Say something on the server
-   start             Start the server
-   stop              Stop the server
    weather-clear     Set the weather to clear
    weather-rain      Set the weather to rain
    weather-thunder   Set the weather to thunder
-   whitelist         Whitelist on the server
    whitelist-add     Add player to whitelist
+   whitelist-list    Whitelist on the server
    whitelist-off     Disable the whitelist
    whitelist-on      Enable the whitelist
    whitelist-reload  Reload the whitelist

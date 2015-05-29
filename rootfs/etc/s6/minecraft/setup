@@ -1,0 +1,46 @@
+#!/bin/bash
+
+find /minecraft/template -mindepth 1 -type d -print0 | while read -d $'\0' TEMPLATE
+do
+  RELATIVENAME=${TEMPLATE//\/minecraft\/template\//}
+
+  if [ ! -d "/minecraft/merge/${RELATIVENAME}" ]
+  then
+    mkdir "/minecraft/merge/${RELATIVENAME}"
+  fi
+
+  if [ ! -d "/minecraft/${RELATIVENAME}" ]
+  then
+    mkdir "/minecraft/${RELATIVENAME}"
+  fi
+done
+
+find /minecraft/template -mindepth 1 -type f -print0 | while read -d $'\0' TEMPLATE
+do
+  RELATIVENAME=${TEMPLATE//\/minecraft\/template\//}
+
+  if [ ! -e "/minecraft/merge/${RELATIVENAME}" ]
+  then
+    cp "${TEMPLATE}" "/minecraft/merge/${RELATIVENAME}"
+  fi
+
+  ln -sf "/minecraft/merge/${RELATIVENAME}" "/minecraft/${RELATIVENAME}"
+done
+
+cp -f \
+  "/minecraft/merge/server.properties" \
+  "/minecraft/server.properties"
+
+if [ -n "${SERVER_MOTD}" ]
+then
+  sed -i \
+    -e "s/motd=.*/motd=${SERVER_MOTD}/" \
+    /minecraft/merge/server.properties
+fi
+
+if [ -n "${SERVER_RCONPWD}" ]
+then
+  sed -i \
+    -e "s/rcon\.password=.*/motd=${SERVER_RCONPWD}/" \
+    /minecraft/merge/server.properties
+fi

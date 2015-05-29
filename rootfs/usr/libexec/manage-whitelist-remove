@@ -13,4 +13,4 @@ then
   exit 1
 fi
 
-manage-mcrcon "whitelist remove ${VALUE}"
+mcrcon -H 127.0.0.1 -p ${SERVER_RCONPWD} "whitelist remove ${VALUE}"
