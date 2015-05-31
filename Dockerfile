@@ -1,4 +1,4 @@
-FROM webhippie/alpine:latest
+FROM webhippie/java:latest
 MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 ENV MINECRAFT_VERSION 1.8.6
@@ -12,14 +12,7 @@ ENV SERVER_OPTS nogui
 ENV SERVER_MOTD Minecraft
 ENV SERVER_RCONPWD webhippie
 
-RUN apk add --update \
-  curl \
-  vim \
-  ca-certificates \
-  nss \
-  openjdk7 && \
-  rm -rf /var/cache/apk/* && \
-  mkdir -p /minecraft && \
+RUN mkdir -p /minecraft && \
   curl -sSLo /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL} 2> /dev/null
 
 VOLUME ["/minecraft/merge", "/minecraft/world", "/minecraft/logs"]
