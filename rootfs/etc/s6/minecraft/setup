@@ -41,6 +41,6 @@ fi
 if [ -n "${SERVER_RCONPWD}" ]
 then
   sed -i \
-    -e "s/rcon\.password=.*/motd=${SERVER_RCONPWD}/" \
+    -e "s/rcon\.password=.*/rcon\.password=${SERVER_RCONPWD}/" \
     /minecraft/server.properties
 fi
