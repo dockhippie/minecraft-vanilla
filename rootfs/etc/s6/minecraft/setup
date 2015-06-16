@@ -35,12 +35,12 @@ if [ -n "${SERVER_MOTD}" ]
 then
   sed -i \
     -e "s/motd=.*/motd=${SERVER_MOTD}/" \
-    /minecraft/merge/server.properties
+    /minecraft/server.properties
 fi
 
 if [ -n "${SERVER_RCONPWD}" ]
 then
   sed -i \
     -e "s/rcon\.password=.*/motd=${SERVER_RCONPWD}/" \
-    /minecraft/merge/server.properties
+    /minecraft/server.properties
 fi
