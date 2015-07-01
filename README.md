@@ -1,14 +1,17 @@
 # Minecraft
 
 These are docker images for Minecraft vanilla running on an
-[Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
+[Java container](https://registry.hub.docker.com/u/webhippie/alpine/).
 
 
 ## Usage
 
 ```
-docker run -v /minecraft/merge -v /minecraft/world -v /minecraft/logs --name minecraft-data busybox true
-docker run -p 25565:25565 -d --volumes-from minecraft-data --name minecraft webhippie/minecraft-vanilla:latest start
+docker run --name minecraft-data busybox true
+docker run -d -p 25565:25565 \
+  --volumes-from minecraft-data \
+  --name minecraft \
+  webhippie/minecraft-vanilla:latest
 
 # Execute this for further available commands
 docker exec -ti minecraft manage help
