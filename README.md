@@ -1,7 +1,7 @@
 # Minecraft
 
 These are docker images for Minecraft vanilla running on an
-[Java container](https://registry.hub.docker.com/u/webhippie/alpine/).
+[Java container](https://registry.hub.docker.com/u/webhippie/java/).
 
 
 ## Usage
