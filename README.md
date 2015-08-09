@@ -6,7 +6,7 @@ These are docker images for Minecraft vanilla running on an
 
 ## Usage
 
-```
+```bash
 docker run --name minecraft-data busybox true
 docker run -d -p 25565:25565 \
   --volumes-from minecraft-data \
@@ -64,6 +64,7 @@ ENV SERVER_MAXPERM 128M
 ENV SERVER_OPTS nogui
 ENV SERVER_MOTD Minecraft
 ENV SERVER_RCONPWD webhippie
+ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
 ```
 
 
