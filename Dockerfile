@@ -11,6 +11,7 @@ ENV SERVER_MAXPERM 128M
 ENV SERVER_OPTS nogui
 ENV SERVER_MOTD Minecraft
 ENV SERVER_RCONPWD webhippie
+ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
 
 RUN mkdir -p /minecraft && \
   curl -sSLo /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL} 2> /dev/null

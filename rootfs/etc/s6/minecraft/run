@@ -23,4 +23,4 @@ then
 fi
 
 cd /minecraft
-exec ${STARTCMD} -jar /minecraft/${MINECRAFT_JAR} ${SERVER_OPTS}
+exec ${STARTCMD} ${JAVA_OPTS} -jar /minecraft/${MINECRAFT_JAR} ${SERVER_OPTS}
