@@ -1,6 +1,8 @@
 # Minecraft
 
-These are docker images for Minecraft vanilla running on an
+[![](https://badge.imagelayers.io/webhippie/minecraft-vanilla:latest.svg)](https://imagelayers.io/?images=webhippie/minecraft-vanilla:latest 'Get your own badge on imagelayers.io')
+
+These are docker images for [Vanilla Minecraft](https://minecraft.net) running on an
 [Java container](https://registry.hub.docker.com/u/webhippie/java/).
 
 
@@ -8,6 +10,7 @@ These are docker images for Minecraft vanilla running on an
 
 ```bash
 docker run --name minecraft-data busybox true
+
 docker run -d -p 25565:25565 \
   --volumes-from minecraft-data \
   --name minecraft \
