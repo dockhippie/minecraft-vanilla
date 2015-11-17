@@ -22,4 +22,4 @@ ADD rootfs /
 EXPOSE 25565 25575
 
 WORKDIR /minecraft
-CMD ["/usr/bin/s6-svscan","/etc/s6"]
+CMD ["/bin/s6-svscan","/etc/s6"]
