@@ -26,6 +26,18 @@ docker exec -ti minecraft manage help
 * [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master)
   available as ```webhippie/minecraft-vanilla:latest``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.2)
+  available as ```webhippie/minecraft-vanilla:1.9.2``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.1)
+  available as ```webhippie/minecraft-vanilla:1.9.1``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9](https://github.com/dockhippie/minecraft-vanilla/tree/1.9)
+  available as ```webhippie/minecraft-vanilla:1.9``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.9](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.9)
+  available as ```webhippie/minecraft-vanilla:1.8.9``` at
+  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 * [1.8.8](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.8)
   available as ```webhippie/minecraft-vanilla:1.8.8``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
