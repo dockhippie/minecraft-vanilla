@@ -6,21 +6,6 @@ These are docker images for [Vanilla Minecraft](https://minecraft.net) running o
 [Java container](https://registry.hub.docker.com/u/webhippie/java/).
 
 
-## Usage
-
-```bash
-docker run --name minecraft-data busybox true
-
-docker run -d -p 25565:25565 \
-  --volumes-from minecraft-data \
-  --name minecraft \
-  webhippie/minecraft-vanilla:latest
-
-# Execute this for further available commands
-docker exec -ti minecraft manage help
-```
-
-
 ## Versions
 
 * [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master)
@@ -70,17 +55,17 @@ docker exec -ti minecraft manage help
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 
 
-## Available environment variables
+## Volumes
 
-```bash
-ENV SERVER_MAXHEAP 2048M
-ENV SERVER_MINHEAP 512M
-ENV SERVER_MAXPERM 128M
-ENV SERVER_OPTS nogui
-ENV SERVER_MOTD Minecraft
-ENV SERVER_RCONPWD webhippie
-ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
-```
+* /minecraft/merge
+* /minecraft/world
+* /minecraft/logs
+
+
+## Ports
+
+* 25565
+* 25575
 
 
 ## Available management commands
@@ -109,6 +94,33 @@ Some useful manage commands are:
 ```
 
 
+## Available environment variables
+
+```bash
+ENV SERVER_MAXHEAP 2048M
+ENV SERVER_MINHEAP 512M
+ENV SERVER_MAXPERM 128M
+ENV SERVER_OPTS nogui
+ENV SERVER_MOTD Minecraft
+ENV SERVER_RCONPWD webhippie
+ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
+```
+
+
+## Inherited environment variables
+
+```bash
+ENV LOGSTASH_ENABLED false
+ENV LOGSTASH_HOST logstash
+ENV LOGSTASH_PORT 5043
+ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
+ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
+ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
+ENV LOGSTASH_TIMEOUT 15
+ENV LOGSTASH_OPTS
+```
+
+
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
@@ -126,4 +138,4 @@ MIT
 
 ## Copyright
 
-Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
