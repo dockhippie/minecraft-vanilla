@@ -1,7 +1,7 @@
 FROM webhippie/java:latest
 MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
-ENV MINECRAFT_VERSION 1.10.2
+ENV MINECRAFT_VERSION 1.11.2
 ENV MINECRAFT_URL https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/minecraft_server.${MINECRAFT_VERSION}.jar
 ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
 
