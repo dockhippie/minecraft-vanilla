@@ -1,73 +1,32 @@
 # Minecraft
 
-[![](https://badge.imagelayers.io/webhippie/minecraft-vanilla:latest.svg)](https://imagelayers.io/?images=webhippie/minecraft-vanilla:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/webhippie/minecraft-vanilla.svg)](https://microbadger.com/images/webhippie/minecraft-vanilla "Get your own image badge on microbadger.com")
 
-These are docker images for [Vanilla Minecraft](https://minecraft.net) running on an
-[Java container](https://registry.hub.docker.com/u/webhippie/java/).
+These are docker images for [Vanilla Minecraft](https://minecraft.net) running on a [Java container](https://registry.hub.docker.com/u/webhippie/java/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master)
-  available as ```webhippie/minecraft-vanilla:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.10.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.10.2)
-  available as ```webhippie/minecraft-vanilla:1.10.2``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.10.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.10.1)
-  available as ```webhippie/minecraft-vanilla:1.10.1``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.10](https://github.com/dockhippie/minecraft-vanilla/tree/1.10)
-  available as ```webhippie/minecraft-vanilla:1.10``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.9.4](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.4)
-  available as ```webhippie/minecraft-vanilla:1.9.4``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.9.3](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.3)
-  available as ```webhippie/minecraft-vanilla:1.9.3``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.9.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.2)
-  available as ```webhippie/minecraft-vanilla:1.9.2``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.9.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.1)
-  available as ```webhippie/minecraft-vanilla:1.9.1``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.9](https://github.com/dockhippie/minecraft-vanilla/tree/1.9)
-  available as ```webhippie/minecraft-vanilla:1.9``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.9](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.9)
-  available as ```webhippie/minecraft-vanilla:1.8.9``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.8](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.8)
-  available as ```webhippie/minecraft-vanilla:1.8.8``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.7](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.7)
-  available as ```webhippie/minecraft-vanilla:1.8.7``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.6](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.6)
-  available as ```webhippie/minecraft-vanilla:1.8.6``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.5](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.5)
-  available as ```webhippie/minecraft-vanilla:1.8.5``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.4](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.4)
-  available as ```webhippie/minecraft-vanilla:1.8.4``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.3](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.3)
-  available as ```webhippie/minecraft-vanilla:1.8.3``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.2)
-  available as ```webhippie/minecraft-vanilla:1.8.2``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.1)
-  available as ```webhippie/minecraft-vanilla:1.8.1``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.8](https://github.com/dockhippie/minecraft-vanilla/tree/1.8)
-  available as ```webhippie/minecraft-vanilla:1.8``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
-* [1.7.10](https://github.com/dockhippie/minecraft-vanilla/tree/1.7.10)
-  available as ```webhippie/minecraft-vanilla:1.7.10``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master) available as ```webhippie/minecraft-vanilla:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.10.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.10.2) available as ```webhippie/minecraft-vanilla:1.10.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.10.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.10.1) available as ```webhippie/minecraft-vanilla:1.10.1``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.10](https://github.com/dockhippie/minecraft-vanilla/tree/1.10) available as ```webhippie/minecraft-vanilla:1.10``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9.4](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.4) available as ```webhippie/minecraft-vanilla:1.9.4``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9.3](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.3) available as ```webhippie/minecraft-vanilla:1.9.3``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.2) available as ```webhippie/minecraft-vanilla:1.9.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.9.1) available as ```webhippie/minecraft-vanilla:1.9.1``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.9](https://github.com/dockhippie/minecraft-vanilla/tree/1.9) available as ```webhippie/minecraft-vanilla:1.9``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.9](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.9) available as ```webhippie/minecraft-vanilla:1.8.9``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.8](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.8) available as ```webhippie/minecraft-vanilla:1.8.8``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.7](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.7) available as ```webhippie/minecraft-vanilla:1.8.7``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.6](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.6) available as ```webhippie/minecraft-vanilla:1.8.6``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.5](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.5) available as ```webhippie/minecraft-vanilla:1.8.5``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.4](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.4) available as ```webhippie/minecraft-vanilla:1.8.4``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.3](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.3) available as ```webhippie/minecraft-vanilla:1.8.3``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.2) available as ```webhippie/minecraft-vanilla:1.8.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.8.1) available as ```webhippie/minecraft-vanilla:1.8.1``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.8](https://github.com/dockhippie/minecraft-vanilla/tree/1.8) available as ```webhippie/minecraft-vanilla:1.8``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.7.10](https://github.com/dockhippie/minecraft-vanilla/tree/1.7.10) available as ```webhippie/minecraft-vanilla:1.7.10``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 
 
 ## Volumes
@@ -81,6 +40,26 @@ These are docker images for [Vanilla Minecraft](https://minecraft.net) running o
 
 * 25565
 * 25575
+
+
+## Available environment variables
+
+```bash
+ENV SERVER_MAXHEAP 2048M
+ENV SERVER_MINHEAP 512M
+ENV SERVER_MAXPERM 128M
+ENV SERVER_OPTS nogui
+ENV SERVER_MOTD Minecraft
+ENV SERVER_RCONPWD webhippie
+ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
+```
+
+
+## Inherited environment variables
+
+```bash
+ENV CRON_ENABLED false
+```
 
 
 ## Available management commands
@@ -109,33 +88,6 @@ Some useful manage commands are:
 ```
 
 
-## Available environment variables
-
-```bash
-ENV SERVER_MAXHEAP 2048M
-ENV SERVER_MINHEAP 512M
-ENV SERVER_MAXPERM 128M
-ENV SERVER_OPTS nogui
-ENV SERVER_MOTD Minecraft
-ENV SERVER_RCONPWD webhippie
-ENV JAVA_OPTS -server -XX:+UseConcMarkSweepGC
-```
-
-
-## Inherited environment variables
-
-```bash
-ENV LOGSTASH_ENABLED false
-ENV LOGSTASH_HOST logstash
-ENV LOGSTASH_PORT 5043
-ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
-ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
-ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
-ENV LOGSTASH_TIMEOUT 15
-ENV LOGSTASH_OPTS
-```
-
-
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
@@ -153,4 +105,6 @@ MIT
 
 ## Copyright
 
-Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
+```
+Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
+```
