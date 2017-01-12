@@ -8,6 +8,9 @@ These are docker images for [Vanilla Minecraft](https://minecraft.net) running o
 ## Versions
 
 * [latest](https://github.com/dockhippie/minecraft-vanilla/tree/master) available as ```webhippie/minecraft-vanilla:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.11.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.11.2) available as ```webhippie/minecraft-vanilla:1.11.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.11.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.11.1) available as ```webhippie/minecraft-vanilla:1.11.1``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
+* [1.11](https://github.com/dockhippie/minecraft-vanilla/tree/1.11) available as ```webhippie/minecraft-vanilla:1.11``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 * [1.10.2](https://github.com/dockhippie/minecraft-vanilla/tree/1.10.2) available as ```webhippie/minecraft-vanilla:1.10.2``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 * [1.10.1](https://github.com/dockhippie/minecraft-vanilla/tree/1.10.1) available as ```webhippie/minecraft-vanilla:1.10.1``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
 * [1.10](https://github.com/dockhippie/minecraft-vanilla/tree/1.10) available as ```webhippie/minecraft-vanilla:1.10``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/minecraft-vanilla/)
