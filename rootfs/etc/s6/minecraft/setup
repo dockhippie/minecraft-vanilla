@@ -26,8 +26,17 @@ do
   then
     cp "${TEMPLATE}" "/minecraft/merge/${RELATIVENAME}"
   fi
+done
 
-  ln -sf "/minecraft/merge/${RELATIVENAME}" "/minecraft/${RELATIVENAME}"
+echo "> linking merge files"
+find /minecraft/merge -maxdepth 1 -mindepth 1 -print0 | while read -d $'\0' MERGE
+do
+  RELATIVENAME=${MERGE//\/minecraft\/merge\//}
+
+  if [ ! -e "/minecraft/${RELATIVENAME}" ]
+  then
+    ln -sf "/minecraft/merge/${RELATIVENAME}" "/minecraft/${RELATIVENAME}"
+  fi
 done
 
 echo "> copy server properties"
