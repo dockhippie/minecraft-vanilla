@@ -26,7 +26,15 @@ do
   then
     cp "${TEMPLATE}" "/minecraft/merge/${RELATIVENAME}"
   fi
+done
 
+echo "> linking merge files"
+find /minecraft/merge -mindepth 1 -type f -print0 | while read -d $'\0' MERGE
+do
+  RELATIVENAME=${MERGE//\/minecraft\/merge\//}
+
+  mkdir -p "$(dirname "/minecraft/$RELATIVENAME")"
+  rm -f "/minecraft/${RELATIVENAME}"
   ln -sf "/minecraft/merge/${RELATIVENAME}" "/minecraft/${RELATIVENAME}"
 done
 
