@@ -9,9 +9,9 @@ WORKDIR /minecraft
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 
-ENV MINECRAFT_VERSION 1.12.2
+ENV MINECRAFT_VERSION 1.14.4
 ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
-ENV MINECRAFT_URL https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/${MINECRAFT_JAR}
+ENV MINECRAFT_URL https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar
 
 RUN curl --create-dirs -sLo /minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 
