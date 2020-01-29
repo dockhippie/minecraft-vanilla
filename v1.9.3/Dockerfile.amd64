@@ -1,0 +1,33 @@
+FROM webhippie/alpine:latest-amd64 as download
+RUN curl -sSL -o- "https://github.com/itzg/rcon-cli/releases/download/1.4.7/rcon-cli_1.4.7_linux_amd64.tar.gz" | tar -xvz -C /tmp
+
+FROM webhippie/java:latest-amd64
+
+LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
+  org.label-schema.name="Minecraft Vanilla" \
+  org.label-schema.version="1.9.3" \
+  org.label-schema.vendor="Thomas Boerger" \
+  org.label-schema.schema-version="1.0"
+
+VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
+
+EXPOSE 25565 25575
+
+WORKDIR /var/lib/minecraft
+ENTRYPOINT ["/usr/bin/entrypoint"]
+CMD ["/bin/s6-svscan", "/etc/s6"]
+
+ENV MINECRAFT_VERSION 1.12.2
+ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
+ENV MINECRAFT_URL https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/${MINECRAFT_JAR}
+
+RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
+
+RUN apk update && \
+  apk upgrade && \
+  groupadd -g 1000 minecraft && \
+  useradd -u 1000 -d /var/lib/minecraft -g minecraft -s /bin/bash -M minecraft && \
+  rm -rf /var/cache/apk/*
+
+COPY --from=download /tmp/rcon-cli /usr/bin/rcon-cli
+COPY ./overlay ./overlay-amd64 /
