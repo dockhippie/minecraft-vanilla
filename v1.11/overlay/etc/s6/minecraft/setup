@@ -1,0 +1,142 @@
+#!/bin/bash
+source /usr/bin/entrypoint
+
+if [ -d /minecraft/merge ]
+then
+    echo "> fallback legacy override"
+    MINECRAFT_OVERRIDE_DIR=/minecraft/merge
+fi
+
+if ls -A ${MINECRAFT_OVERRIDE_DIR}/* >/dev/null 2>&1
+then
+    echo "> copy override content"
+    cp -rf ${MINECRAFT_OVERRIDE_DIR}/* ${MINECRAFT_GAME_DIR}
+fi
+
+if [ -d /minecraft/logs ]
+then
+    echo "> fallback legacy logs"
+    MINECRAFT_LOGS_DIR=/minecraft/logs
+fi
+
+if [ ! -d ${MINECRAFT_LOGS_DIR} ]
+then
+    echo "> creating logs dir"
+    mkdir -p ${MINECRAFT_LOGS_DIR}
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/logs ]
+then
+    echo "> creating logs symlink"
+    ln -sf ${MINECRAFT_LOGS_DIR} ${MINECRAFT_GAME_DIR}/logs
+fi
+
+if [ -d /minecraft/world ]
+then
+    echo "> fallback legacy world"
+    MINECRAFT_WORLD_DIR=/minecraft/world
+fi
+
+if [ ! -d ${MINECRAFT_WORLD_DIR} ]
+then
+    echo "> creating world dir"
+    mkdir -p ${MINECRAFT_WORLD_DIR}
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/world ]
+then
+    echo "> creating world symlink"
+    ln -sf ${MINECRAFT_WORLD_DIR} ${MINECRAFT_GAME_DIR}/world
+fi
+
+if [ ! -f ${MINECRAFT_DATA_DIR}/banned-ips.json ]
+then
+    echo "> creating banned-ips file"
+    echo "[]" > ${MINECRAFT_DATA_DIR}/banned-ips.json
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/banned-ips.json ]
+then
+    echo "> creating banned-ips symlink"
+    ln -sf ${MINECRAFT_DATA_DIR}/banned-ips.json ${MINECRAFT_GAME_DIR}/banned-ips.json
+fi
+
+if [ ! -f ${MINECRAFT_DATA_DIR}/banned-players.json ]
+then
+    echo "> creating banned-players file"
+    echo "[]" > ${MINECRAFT_DATA_DIR}/banned-players.json
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/banned-players.json ]
+then
+    echo "> creating banned-players symlink"
+    ln -sf ${MINECRAFT_DATA_DIR}/banned-players.json ${MINECRAFT_GAME_DIR}/banned-players.json
+fi
+
+if [ ! -f ${MINECRAFT_DATA_DIR}/ops.json ]
+then
+    echo "> creating ops file"
+    echo "[]" > ${MINECRAFT_DATA_DIR}/ops.json
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/ops.json ]
+then
+    echo "> creating ops symlink"
+    ln -sf ${MINECRAFT_DATA_DIR}/ops.json ${MINECRAFT_GAME_DIR}/ops.json
+fi
+
+if [ ! -f ${MINECRAFT_DATA_DIR}/whitelist.json ]
+then
+    echo "> creating whitelist file"
+    echo "[]" > ${MINECRAFT_DATA_DIR}/whitelist.json
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/whitelist.json ]
+then
+    echo "> creating whitelist symlink"
+    ln -sf ${MINECRAFT_DATA_DIR}/whitelist.json ${MINECRAFT_GAME_DIR}/whitelist.json
+fi
+
+if [ ! -f ${MINECRAFT_DATA_DIR}/usercache.json ]
+then
+    echo "> creating usercache file"
+    echo "[]" > ${MINECRAFT_DATA_DIR}/usercache.json
+fi
+
+if [ ! -L ${MINECRAFT_GAME_DIR}/usercache.json ]
+then
+    echo "> creating usercache symlink"
+    ln -sf ${MINECRAFT_DATA_DIR}/usercache.json ${MINECRAFT_GAME_DIR}/usercache.json
+fi
+
+if [[ "${MINECRAFT_SKIP_SERVER_PROPERTIES}" != "true" ]]
+then
+  echo "> writing server properties"
+  /usr/bin/gomplate -V \
+    -o ${MINECRAFT_DATA_DIR}/server.properties \
+    -f /etc/templates/server.properties.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+
+  if [ ! -L ${MINECRAFT_GAME_DIR}/server.properties ]
+  then
+      echo "> creating properties symlink"
+      ln -sf ${MINECRAFT_DATA_DIR}/server.properties ${MINECRAFT_GAME_DIR}/server.properties
+  fi
+else
+  if [ ! -f ${MINECRAFT_DATA_DIR}/server.properties ]
+  then
+      echo "> creating properties file"
+      touch ${MINECRAFT_DATA_DIR}/server.properties
+  fi
+
+  if [ ! -L ${MINECRAFT_GAME_DIR}/server.properties ]
+  then
+      echo "> creating properties symlink"
+      ln -sf ${MINECRAFT_DATA_DIR}/server.properties ${MINECRAFT_GAME_DIR}/server.properties
+  fi
+fi

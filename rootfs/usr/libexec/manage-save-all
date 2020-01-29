@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# Usage: manage save-all
-# Summary: Save the current world state
-# Help: This command is used to save the current state of the server.
-set -e
-[[ -z $_MANAGE_ROOT ]] && exit 1
-
-mcrcon -H 127.0.0.1 -p ${SERVER_RCONPWD} "save-all"
