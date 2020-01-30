@@ -1,7 +1,7 @@
 FROM webhippie/alpine:latest-arm64v8 as download
 RUN curl -sSL -o- "https://github.com/itzg/rcon-cli/releases/download/1.4.7/rcon-cli_1.4.7_linux_arm64.tar.gz" | tar -xvz -C /tmp
 
-FROM webhippie/java:latest-arm64v8
+FROM webhippie/java:8-arm64v8
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Minecraft Vanilla" \
@@ -17,7 +17,7 @@ WORKDIR /var/lib/minecraft
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 
-ENV MINECRAFT_VERSION 1.12.2
+ENV MINECRAFT_VERSION 1.11.2
 ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
 ENV MINECRAFT_URL https://s3.amazonaws.com/Minecraft.Download/versions/${MINECRAFT_VERSION}/${MINECRAFT_JAR}
 

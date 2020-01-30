@@ -1,7 +1,7 @@
 FROM webhippie/alpine:latest-amd64 as download
 RUN curl -sSL -o- "https://github.com/itzg/rcon-cli/releases/download/1.4.7/rcon-cli_1.4.7_linux_amd64.tar.gz" | tar -xvz -C /tmp
 
-FROM webhippie/java:latest-amd64
+FROM webhippie/java:8-amd64
 
 LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
   org.label-schema.name="Minecraft Vanilla" \
