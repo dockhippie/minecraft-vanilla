@@ -8,3 +8,5 @@ declare -x MINECRAFT_MINHEAP
 
 declare -x MINECRAFT_JAVA_OPTS
 [[ -z "${MINECRAFT_JAVA_OPTS}" ]] && MINECRAFT_JAVA_OPTS="${JAVA_OPTS:--server -XX:+UseConcMarkSweepGC}"
+
+true

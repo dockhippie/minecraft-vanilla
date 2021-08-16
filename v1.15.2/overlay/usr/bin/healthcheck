@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eo pipefail
+source /usr/bin/entrypoint
 
 rcon-cli \
   --host "${MINECRAFT_SERVER_IP:-0.0.0.0}" \
