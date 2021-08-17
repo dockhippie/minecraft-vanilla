@@ -1,11 +1,11 @@
-FROM webhippie/java:8-arm as build
+FROM webhippie/adoptopenjdk:8-arm as build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_armv6.tar.gz" | tar -xvz -C /tmp
 
-FROM webhippie/java:8-arm
+FROM webhippie/adoptopenjdk:8-arm
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
@@ -20,11 +20,12 @@ ENV MINECRAFT_URL https://launcher.mojang.com/v1/objects/f00c294a1576e03fddcac77
 
 RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 
-RUN apk update && \
-  apk upgrade && \
+RUN apt-get update && \
+  apt-get upgrade -y && \
   groupadd -g 1000 minecraft && \
   useradd -u 1000 -d /var/lib/minecraft -g minecraft -s /bin/bash -M minecraft && \
-  rm -rf /var/cache/apk/*
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/**
 
 COPY --from=build /tmp/rcon-cli /usr/bin/rcon-cli
 COPY ./overlay /
