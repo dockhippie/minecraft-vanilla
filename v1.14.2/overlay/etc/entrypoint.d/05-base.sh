@@ -17,3 +17,8 @@ declare -x MINECRAFT_OVERRIDE_DIR
 
 declare -x MINECRAFT_OPTS
 [[ -z "${MINECRAFT_OPTS}" ]] && MINECRAFT_OPTS="${SERVER_OPTS:-nogui}"
+
+declare -x MINECRAFT_SKIP_CHOWN
+[[ -z "${MINECRAFT_SKIP_CHOWN}" ]] && MINECRAFT_SKIP_CHOWN="false"
+
+true
