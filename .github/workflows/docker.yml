@@ -24,6 +24,18 @@ jobs:
             tag: 1.17
             arm64: true
             arm: true
+          - folder: v1.16.5
+            tag: 1.16.5
+            arm64: true
+            arm: true
+          - folder: v1.16.4
+            tag: 1.16.4
+            arm64: true
+            arm: true
+          - folder: v1.16.3
+            tag: 1.16.3
+            arm64: true
+            arm: true
           - folder: v1.16.2
             tag: 1.16.2
             arm64: true
