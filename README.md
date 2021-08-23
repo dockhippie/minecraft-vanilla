@@ -2,7 +2,7 @@
 
 [![Docker Build](https://github.com/dockhippie/minecraft-vanilla/workflows/docker/badge.svg)](https://github.com/dockhippie/minecraft-vanilla/actions?query=workflow%3Adocker) [![Readme Build](https://github.com/dockhippie/minecraft-vanilla/workflows/readme/badge.svg)](https://github.com/dockhippie/minecraft-vanilla/actions?query=workflow%3Areadme) [![Docker Size](https://img.shields.io/docker/image-size/webhippie/minecraft-vanilla/latest)](#) [![Docker Pulls](https://img.shields.io/docker/pulls/webhippie/minecraft-vanilla)](https://hub.docker.com/r/webhippie/minecraft-vanilla) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/minecraft-vanilla)
 
-These are docker images for [Vanilla Minecraft](https://minecraft.net) running on our [Java image](https://github.com/dockhippie/java).
+These are docker images for [Vanilla Minecraft](https://minecraft.net) running on our [AdoptOpenJDK image](https://github.com/dockhippie/adoptopenjdk).
 
 ## Versions
 
@@ -73,7 +73,7 @@ MINECRAFT_WORLD_DIR = ${MINECRAFT_DATA_DIR}/world
 
 ## Inherited environment variables
 
-*  [webhippie/java](https://github.com/dockhippie/java#available-environment-variables)
+*  [webhippie/adoptopenjdk](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
 *  [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
 
 ## Contributing
