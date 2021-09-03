@@ -1,11 +1,11 @@
-FROM webhippie/adoptopenjdk:8-arm@sha256:c0e8ad6429e3dee8a04a30b9eb9791010c7f719e19756312a99db46bb7f9e5be as build
+FROM webhippie/adoptopenjdk:8-arm@sha256:25ff2969534bb3ddc2dbeab826fea526c64b62c257f1e8fd87e9f9b96799d176 as build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_armv6.tar.gz" | tar -xvz -C /tmp
 
-FROM webhippie/adoptopenjdk:8-arm@sha256:c0e8ad6429e3dee8a04a30b9eb9791010c7f719e19756312a99db46bb7f9e5be
+FROM webhippie/adoptopenjdk:8-arm@sha256:25ff2969534bb3ddc2dbeab826fea526c64b62c257f1e8fd87e9f9b96799d176
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
