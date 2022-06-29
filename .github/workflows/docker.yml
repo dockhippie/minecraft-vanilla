@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  publish:
+  docker:
     runs-on: ubuntu-20.04
 
     strategy:
@@ -212,8 +212,8 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           images: |
-            webhippie/minecraft-vanilla
-            quay.io/webhippie/minecraft-vanilla
+            webhippie/vanilla-minecraft
+            quay.io/webhippie/vanilla-minecraft
           labels: |
             org.opencontainers.image.vendor=Webhippie
             maintainer=Thomas Boerger <thomas@webhippie.de>
@@ -254,8 +254,8 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/minecraft-vanilla:${{ matrix.version.tag }}-amd64
-            quay.io/webhippie/minecraft-vanilla:${{ matrix.version.tag }}-amd64
+            webhippie/vanilla-minecraft:${{ matrix.version.tag }}-amd64
+            quay.io/webhippie/vanilla-minecraft:${{ matrix.version.tag }}-amd64
 
       - name: Build arm64
         id: arm64
@@ -269,8 +269,8 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/minecraft-vanilla:${{ matrix.version.tag }}-arm64
-            quay.io/webhippie/minecraft-vanilla:${{ matrix.version.tag }}-arm64
+            webhippie/vanilla-minecraft:${{ matrix.version.tag }}-arm64
+            quay.io/webhippie/vanilla-minecraft:${{ matrix.version.tag }}-arm64
 
       - name: Build arm
         id: arm
@@ -284,8 +284,8 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/minecraft-vanilla:${{ matrix.version.tag }}-arm
-            quay.io/webhippie/minecraft-vanilla:${{ matrix.version.tag }}-arm
+            webhippie/vanilla-minecraft:${{ matrix.version.tag }}-arm
+            quay.io/webhippie/vanilla-minecraft:${{ matrix.version.tag }}-arm
 
       - name: Hub manifest
         id: manifest1
@@ -295,8 +295,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
-          template: webhippie/minecraft-vanilla:${{ matrix.version.tag }}-ARCH
-          target: webhippie/minecraft-vanilla:${{ matrix.version.tag }}
+          template: webhippie/vanilla-minecraft:${{ matrix.version.tag }}-ARCH
+          target: webhippie/vanilla-minecraft:${{ matrix.version.tag }}
           ignore_missing: true
 
       - name: Quay manifest
@@ -307,8 +307,8 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v6
-          template: quay.io/webhippie/minecraft-vanilla:${{ matrix.version.tag }}-ARCH
-          target: quay.io/webhippie/minecraft-vanilla:${{ matrix.version.tag }}
+          template: quay.io/webhippie/vanilla-minecraft:${{ matrix.version.tag }}-ARCH
+          target: quay.io/webhippie/vanilla-minecraft:${{ matrix.version.tag }}
           ignore_missing: true
 
 ...
