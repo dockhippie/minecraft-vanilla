@@ -1,11 +1,11 @@
-FROM webhippie/adoptopenjdk:16-amd64@sha256:591e6d8b2899806102be7d23a3be539448b8189fff95f0f52f2e14b002e84941 as build
+FROM webhippie/temurin:18-amd64 as build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_amd64.tar.gz" | tar -xvz -C /tmp
 
-FROM webhippie/adoptopenjdk:16-amd64@sha256:591e6d8b2899806102be7d23a3be539448b8189fff95f0f52f2e14b002e84941
+FROM webhippie/temurin:18-amd64
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
@@ -15,7 +15,7 @@ CMD ["/usr/bin/container"]
 
 ENV MINECRAFT_VERSION 1.19
 ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
-ENV MINECRAFT_URL https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar
+ENV MINECRAFT_URL https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar
 
 RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 

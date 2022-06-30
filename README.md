@@ -3,7 +3,7 @@
 [![Docker Build](https://github.com/dockhippie/minecraft-vanilla/actions/workflows/docker.yml/badge.svg)](https://github.com/dockhippie/minecraft-vanilla/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/minecraft-vanilla)
 
 These are docker images for [Vanilla Minecraft][upstream] running on our
-[AdoptOpenJDK image][parent].
+[Temurin image][parent].
 
 ## Versions
 
@@ -76,7 +76,7 @@ MINECRAFT_WORLD_DIR = ${MINECRAFT_DATA_DIR}/world
 
 ## Inherited environment variables
 
-*  [webhippie/adoptopenjdk](https://github.com/dockhippie/adoptopenjdk#available-environment-variables)
+*  [webhippie/temurin](https://github.com/dockhippie/temurin#available-environment-variables)
 *  [webhippie/alpine](https://github.com/dockhippie/alpine#available-environment-variables)
 
 ## Contributing
@@ -98,7 +98,7 @@ Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
 ```
 
 [upstream]: https://minecraft.net
-[parent]: https://github.com/dockhippie/adoptopenjdk
+[parent]: https://github.com/dockhippie/temurin
 [dockerhub]: https://hub.docker.com/r/webhippie/apache/tags
 [quayio]: https://quay.io/repository/webhippie/apache?tab=tags
 [github]: https://github.com/dockhippie/apache
