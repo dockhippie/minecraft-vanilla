@@ -1,12 +1,15 @@
 # minecraft-vanilla
 
-[![Docker Build](https://github.com/dockhippie/minecraft-vanilla/workflows/docker/badge.svg)](https://github.com/dockhippie/minecraft-vanilla/actions?query=workflow%3Adocker) [![Readme Build](https://github.com/dockhippie/minecraft-vanilla/workflows/readme/badge.svg)](https://github.com/dockhippie/minecraft-vanilla/actions?query=workflow%3Areadme) [![Docker Size](https://img.shields.io/docker/image-size/webhippie/minecraft-vanilla/latest)](#) [![Docker Pulls](https://img.shields.io/docker/pulls/webhippie/minecraft-vanilla)](https://hub.docker.com/r/webhippie/minecraft-vanilla) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/minecraft-vanilla)
+[![Docker Build](https://github.com/dockhippie/minecraft-vanilla/actions/workflows/docker.yml/badge.svg)](https://github.com/dockhippie/minecraft-vanilla/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/minecraft-vanilla)
 
-These are docker images for [Vanilla Minecraft](https://minecraft.net) running on our [AdoptOpenJDK image](https://github.com/dockhippie/adoptopenjdk).
+These are docker images for [Vanilla Minecraft][upstream] running on our
+[AdoptOpenJDK image][parent].
 
 ## Versions
 
-For the available versions please look at [Docker Hub](https://hub.docker.com/r/webhippie/minecraft-vanilla/tags) or [Quay](https://quay.io/repository/webhippie/minecraft-vanilla?tab=tags) or check the existing folders within the [GitHub repository](https://github.com/dockhippie/minecraft-vanilla).
+For the available versions please look at [Docker Hub][dockerhub] or
+[Quay][quayio] or check the existing folders within the
+[GitHub repository][github].
 
 ## Volumes
 
@@ -93,3 +96,9 @@ MIT
 ```console
 Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
 ```
+
+[upstream]: https://minecraft.net
+[parent]: https://github.com/dockhippie/adoptopenjdk
+[dockerhub]: https://hub.docker.com/r/webhippie/apache/tags
+[quayio]: https://quay.io/repository/webhippie/apache?tab=tags
+[github]: https://github.com/dockhippie/apache
