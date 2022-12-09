@@ -1,11 +1,11 @@
-FROM webhippie/temurin:8-arm64@sha256:f933643da350963fb9dc666840a5ed299fd3d9cb9a2aea7fb6957485275baff5 as build
+FROM webhippie/temurin:8-arm64@sha256:9a3a38304b73820ffe1936663725cc27c2beae7cfc3a96ccbcf25c4ad933482d as build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_arm64.tar.gz" | tar -xvz -C /tmp
 
-FROM webhippie/temurin:8-arm64@sha256:f933643da350963fb9dc666840a5ed299fd3d9cb9a2aea7fb6957485275baff5
+FROM webhippie/temurin:8-arm64@sha256:9a3a38304b73820ffe1936663725cc27c2beae7cfc3a96ccbcf25c4ad933482d
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
