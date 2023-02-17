@@ -16,6 +16,9 @@ name: v1.9
       - .github/workflows/v1.9.yml
   workflow_dispatch:
 
+concurrency:
+  group: v1.9
+
 jobs:
   docker:
     runs-on: ubuntu-latest

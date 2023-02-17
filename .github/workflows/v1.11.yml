@@ -16,6 +16,9 @@ name: v1.11
       - .github/workflows/v1.11.yml
   workflow_dispatch:
 
+concurrency:
+  group: v1.11
+
 jobs:
   docker:
     runs-on: ubuntu-latest
