@@ -1,23 +1,23 @@
 ---
-name: latest
+name: v1.15
 
 "on":
   push:
     branches:
       - master
     paths:
-      - latest/*
-      - .github/workflows/docker.yml
+      - v1.15/*
+      - .github/workflows/v1.15.yml
   pull_request:
     branches:
       - master
     paths:
-      - latest/*
-      - .github/workflows/docker.yml
+      - v1.15/*
+      - .github/workflows/v1.15.yml
   workflow_dispatch:
 
 concurrency:
-  group: latest
+  group: v1.15
 
 jobs:
   docker:
@@ -70,42 +70,42 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          file: latest/Dockerfile.amd64
+          context: v1.15/
+          file: v1.15/Dockerfile.amd64
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/minecraft-vanilla:latest-amd64
-            quay.io/webhippie/minecraft-vanilla:latest-amd64
+            webhippie/minecraft-vanilla:1.15-amd64
+            quay.io/webhippie/minecraft-vanilla:1.15-amd64
 
       - name: Build arm64
         id: arm64
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          file: latest/Dockerfile.arm64
+          context: v1.15/
+          file: v1.15/Dockerfile.arm64
           platforms: linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/minecraft-vanilla:latest-arm64
-            quay.io/webhippie/minecraft-vanilla:latest-arm64
+            webhippie/minecraft-vanilla:1.15-arm64
+            quay.io/webhippie/minecraft-vanilla:1.15-arm64
 
       - name: Build arm
         id: arm
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          file: latest/Dockerfile.arm
+          context: v1.15/
+          file: v1.15/Dockerfile.arm
           platforms: linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            webhippie/minecraft-vanilla:latest-arm
-            quay.io/webhippie/minecraft-vanilla:latest-arm
+            webhippie/minecraft-vanilla:1.15-arm
+            quay.io/webhippie/minecraft-vanilla:1.15-arm
 
       - name: Hub manifest
         id: manifest1
@@ -115,8 +115,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          template: webhippie/minecraft-vanilla:latest-ARCH
-          target: webhippie/minecraft-vanilla:latest
+          template: webhippie/minecraft-vanilla:1.15-ARCH
+          target: webhippie/minecraft-vanilla:1.15
           ignore_missing: true
 
       - name: Quay manifest
@@ -127,8 +127,8 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
           platforms: linux/amd64,linux/arm64,linux/arm/v7
-          template: quay.io/webhippie/minecraft-vanilla:latest-ARCH
-          target: quay.io/webhippie/minecraft-vanilla:latest
+          template: quay.io/webhippie/minecraft-vanilla:1.15-ARCH
+          target: quay.io/webhippie/minecraft-vanilla:1.15
           ignore_missing: true
 
 ...
