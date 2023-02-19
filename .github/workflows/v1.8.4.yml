@@ -16,9 +16,6 @@ name: v1.8.4
       - .github/workflows/v1.8.4.yml
   workflow_dispatch:
 
-concurrency:
-  group: v1.8.4
-
 jobs:
   docker:
     runs-on: ubuntu-latest

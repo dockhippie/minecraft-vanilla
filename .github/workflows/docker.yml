@@ -16,9 +16,6 @@ name: latest
       - .github/workflows/docker.yml
   workflow_dispatch:
 
-concurrency:
-  group: latest
-
 jobs:
   docker:
     runs-on: ubuntu-latest
