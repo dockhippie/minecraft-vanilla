@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/temurin:18-arm64@sha256:36089faf39519cb9238f155cc5d4969396d7da96cd61649239c5dbadb86ee136 AS build
+FROM ghcr.io/dockhippie/temurin:18-arm64 AS build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
