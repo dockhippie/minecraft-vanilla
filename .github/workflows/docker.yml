@@ -104,22 +104,6 @@ jobs:
             quay.io/webhippie/minecraft-vanilla:latest-arm64
             ghcr.io/dockhippie/minecraft-vanilla:latest-arm64
 
-      - name: Build arm
-        id: arm
-        uses: docker/build-push-action@v6
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          provenance: false
-          file: latest/Dockerfile.arm
-          platforms: linux/arm/v7
-          push: ${{ github.event_name != 'pull_request' }}
-          labels: ${{ steps.meta.outputs.labels }}
-          tags: |
-            webhippie/minecraft-vanilla:latest-arm
-            quay.io/webhippie/minecraft-vanilla:latest-arm
-            ghcr.io/dockhippie/minecraft-vanilla:latest-arm
-
       - name: Hub manifest
         id: manifest1
         uses: actionhippie/manifest@v1
@@ -127,7 +111,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           template: webhippie/minecraft-vanilla:latest-ARCH
           target: webhippie/minecraft-vanilla:latest
           ignore_missing: true
@@ -139,7 +123,7 @@ jobs:
         with:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           template: quay.io/webhippie/minecraft-vanilla:latest-ARCH
           target: quay.io/webhippie/minecraft-vanilla:latest
           ignore_missing: true
@@ -151,7 +135,7 @@ jobs:
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: linux/amd64,linux/arm64
           template: ghcr.io/dockhippie/minecraft-vanilla:latest-ARCH
           target: ghcr.io/dockhippie/minecraft-vanilla:latest
           ignore_missing: true
