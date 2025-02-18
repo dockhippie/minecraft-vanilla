@@ -1,11 +1,11 @@
-FROM ghcr.io/dockhippie/temurin:18-arm@sha256:bf0839dbae7e46386fd3c0d6ab2d1272b5e8260a38ac7638c14414314de1cf01 AS build
+FROM ghcr.io/dockhippie/temurin:18-arm AS build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_armv6.tar.gz" | tar -xvz -C /tmp
 
-FROM ghcr.io/dockhippie/temurin:18-arm@sha256:bf0839dbae7e46386fd3c0d6ab2d1272b5e8260a38ac7638c14414314de1cf01
+FROM ghcr.io/dockhippie/temurin:18-arm
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
@@ -13,9 +13,9 @@ EXPOSE 25565 25575
 WORKDIR /var/lib/minecraft
 CMD ["/usr/bin/container"]
 
-ENV MINECRAFT_VERSION 1.20.6
-ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
-ENV MINECRAFT_URL https://launcher.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar
+ENV MINECRAFT_VERSION=1.20.6
+ENV MINECRAFT_JAR=minecraft_server.${MINECRAFT_VERSION}.jar
+ENV MINECRAFT_URL=https://launcher.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar
 
 RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 
