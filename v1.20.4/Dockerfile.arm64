@@ -1,0 +1,30 @@
+FROM ghcr.io/dockhippie/temurin:18-arm64@sha256:7b1c40d2f35f4b48334aa92ae2fc5615327df52b3185a249c996797fd5c968f8 AS build
+
+# renovate: datasource=github-releases depName=itzg/rcon-cli
+ENV RCONCLI_VERSION=1.4.8
+
+RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_arm64.tar.gz" | tar -xvz -C /tmp
+
+FROM ghcr.io/dockhippie/temurin:18-arm64@sha256:7b1c40d2f35f4b48334aa92ae2fc5615327df52b3185a249c996797fd5c968f8
+
+VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
+EXPOSE 25565 25575
+
+WORKDIR /var/lib/minecraft
+CMD ["/usr/bin/container"]
+
+ENV MINECRAFT_VERSION 1.20.4
+ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
+ENV MINECRAFT_URL https://launcher.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar
+
+RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
+
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  groupadd -g 1000 minecraft && \
+  useradd -u 1000 -d /var/lib/minecraft -g minecraft -s /bin/bash -M minecraft && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+COPY --from=build /tmp/rcon-cli /usr/bin/rcon-cli
+COPY ./overlay /
