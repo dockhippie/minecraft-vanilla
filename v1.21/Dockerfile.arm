@@ -1,0 +1,30 @@
+FROM ghcr.io/dockhippie/temurin:17-arm AS build
+
+# renovate: datasource=github-releases depName=itzg/rcon-cli
+ENV RCONCLI_VERSION=1.4.8
+
+RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_armv6.tar.gz" | tar -xvz -C /tmp
+
+FROM ghcr.io/dockhippie/temurin:17-arm
+
+VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
+EXPOSE 25565 25575
+
+WORKDIR /var/lib/minecraft
+CMD ["/usr/bin/container"]
+
+ENV MINECRAFT_VERSION 1.21
+ENV MINECRAFT_JAR minecraft_server.${MINECRAFT_VERSION}.jar
+ENV MINECRAFT_URL https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar
+
+RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
+
+RUN apt-get update && \
+  apt-get upgrade -y && \
+  groupadd -g 1000 minecraft && \
+  useradd -u 1000 -d /var/lib/minecraft -g minecraft -s /bin/bash -M minecraft && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+COPY --from=build /tmp/rcon-cli /usr/bin/rcon-cli
+COPY ./overlay /
