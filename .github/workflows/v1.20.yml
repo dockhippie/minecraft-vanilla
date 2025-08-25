@@ -97,6 +97,8 @@ jobs:
           platforms: ${{ matrix.variant.platform }}
           push: ${{ github.event_name != 'pull_request' }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           tags: |
             webhippie/minecraft-vanilla:1.20-${{ matrix.variant.arch }}
             quay.io/webhippie/minecraft-vanilla:1.20-${{ matrix.variant.arch }}
