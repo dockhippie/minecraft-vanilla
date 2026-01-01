@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -eo pipefail
+source /usr/bin/entrypoint
+
+rcon-cli \
+    --host "${MINECRAFT_SERVER_IP:-0.0.0.0}" \
+    --port "${MINECRAFT_RCON_PORT:-25575}" \
+    --password "${MINECRAFT_RCON_PASSWORD:-webhippie}" \
+    help >/dev/null 2>&1
+
+if [[ $? == 0 ]]; then
+    exit 0
+fi
+
+exit 1

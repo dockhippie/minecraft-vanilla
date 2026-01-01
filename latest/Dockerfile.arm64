@@ -13,9 +13,9 @@ EXPOSE 25565 25575
 WORKDIR /var/lib/minecraft
 CMD ["/usr/bin/container"]
 
-ENV MINECRAFT_VERSION=1.21.4
+ENV MINECRAFT_VERSION=1.21.11
 ENV MINECRAFT_JAR=minecraft_server.${MINECRAFT_VERSION}.jar
-ENV MINECRAFT_URL=https://piston-data.mojang.com/v1/objects/4707d00eb834b446575d89a61a11b5d548d8c001/server.jar
+ENV MINECRAFT_URL=https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar
 
 RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 

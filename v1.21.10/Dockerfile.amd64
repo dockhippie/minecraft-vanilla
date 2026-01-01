@@ -5,7 +5,7 @@ ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_amd64.tar.gz" | tar -xvz -C /tmp
 
-FROM ghcr.io/dockhippie/temurin:21-amd64@sha256:555f985818b2a6cd8488d7de6320eb9dfd013808fdbe308e5575ff6d6ac9eb91
+FROM ghcr.io/dockhippie/temurin:21-amd64@sha256:16f6db9abfa693ece048dd3d62a657861962f7c0824d190d6f07cffa9058d753
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
@@ -13,9 +13,9 @@ EXPOSE 25565 25575
 WORKDIR /var/lib/minecraft
 CMD ["/usr/bin/container"]
 
-ENV MINECRAFT_VERSION=1.21.11
+ENV MINECRAFT_VERSION=1.21.10
 ENV MINECRAFT_JAR=minecraft_server.${MINECRAFT_VERSION}.jar
-ENV MINECRAFT_URL=https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/server.jar
+ENV MINECRAFT_URL=https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/server.jar
 
 RUN curl --create-dirs -sLo /usr/share/minecraft/${MINECRAFT_JAR} ${MINECRAFT_URL}
 
