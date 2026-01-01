@@ -13,7 +13,7 @@ EXPOSE 25565 25575
 WORKDIR /var/lib/minecraft
 CMD ["/usr/bin/container"]
 
-ENV MINECRAFT_VERSION=1.21.4
+ENV MINECRAFT_VERSION=1.21.6
 ENV MINECRAFT_JAR=minecraft_server.${MINECRAFT_VERSION}.jar
 ENV MINECRAFT_URL=https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar
 
