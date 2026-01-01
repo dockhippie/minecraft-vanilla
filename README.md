@@ -64,6 +64,7 @@ MINECRAFT_RESOURCE_PACK =
 MINECRAFT_RESOURCE_PACK_HASH =
 MINECRAFT_SERVER_IP = 0.0.0.0
 MINECRAFT_SERVER_PORT = 25565
+MINECRAFT_SKIP_CHOWN = false
 MINECRAFT_SNOOPER_ENABLED = true
 MINECRAFT_SPAWN_ANIMALS = true
 MINECRAFT_SPAWN_MONSTERS = true
@@ -73,6 +74,8 @@ MINECRAFT_VIEW_DISTANCE = 10
 MINECRAFT_WHITE_LIST = false
 MINECRAFT_WORLD_DIR = ${MINECRAFT_DATA_DIR}/world
 ```
+
+Extracted by the command: `grep -hE ': "\$\{(.*)\}"' latest/overlay/etc/entrypoint.d/*.sh | sed 's/: "\${//' | sed 's/:="/ = /' | sed 's/"}"$//' | sort | uniq`
 
 ## Inherited environment variables
 
