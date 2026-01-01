@@ -5,7 +5,7 @@ ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_arm64.tar.gz" | tar -xvz -C /tmp
 
-FROM ghcr.io/dockhippie/temurin:21-arm64@sha256:9687739276f0df73db57603a255924bb5036b9c7a717161a4450c64a35555f76
+FROM ghcr.io/dockhippie/temurin:21-arm64@sha256:7bb0fcdfd8a7e0b5027292b27310442de35ace7c6d32bea5c565af69b066a568
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
