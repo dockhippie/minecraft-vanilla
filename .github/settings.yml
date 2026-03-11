@@ -1,7 +1,7 @@
 ---
 repository:
   name: minecraft-vanilla
-  description: Docker images for minecraft-vanilla
+  description: Docker images for Vanilla Minecraft
   topics: docker, image
 
   private: false
