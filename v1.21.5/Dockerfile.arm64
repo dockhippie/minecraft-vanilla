@@ -1,11 +1,11 @@
-FROM ghcr.io/dockhippie/temurin:21-arm64@sha256:519d505efd36fd87399dcb5d7b1f043c9cd7ff7ac4126ee417c65eced8adc491 AS build
+FROM ghcr.io/dockhippie/temurin:21-arm64@sha256:347874664191402458ba89354e7995de6b2c041fccdc411f6828ec6336705ed8 AS build
 
 # renovate: datasource=github-releases depName=itzg/rcon-cli
 ENV RCONCLI_VERSION=1.4.8
 
 RUN curl -sSLo - "https://github.com/itzg/rcon-cli/releases/download/${RCONCLI_VERSION}/rcon-cli_${RCONCLI_VERSION}_linux_arm64.tar.gz" | tar -xvz -C /tmp
 
-FROM ghcr.io/dockhippie/temurin:21-arm64@sha256:519d505efd36fd87399dcb5d7b1f043c9cd7ff7ac4126ee417c65eced8adc491
+FROM ghcr.io/dockhippie/temurin:21-arm64@sha256:347874664191402458ba89354e7995de6b2c041fccdc411f6828ec6336705ed8
 
 VOLUME ["/var/lib/minecraft", "/etc/minecraft/override"]
 EXPOSE 25565 25575
